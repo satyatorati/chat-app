@@ -8,6 +8,6 @@ router.get("/users", protectRoute, getUsersForSidebar);
 router.get("/:id", protectRoute, getMessages);
 
 router.post("/send/:id", protectRoute, sendMessage);
-router.post("/messages/translate", protectRoute, translateMessage);
+router.post("/translate", protectRoute, translateMessage);
 
 export default router;
