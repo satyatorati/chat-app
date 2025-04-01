@@ -2,7 +2,7 @@ import { axiosInstance } from "./axios";
 
 export const translateText = async (text, targetLang) => {
   try {
-    const response = await axiosInstance.post("/translate", {
+    const response = await axiosInstance.post("/messages/translate", {
       text,
       targetLang,
     });
