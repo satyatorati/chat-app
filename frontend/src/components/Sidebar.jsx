@@ -3,6 +3,7 @@ import { useChatStore } from "../store/useChatStore";
 import { useAuthStore } from "../store/useAuthStore";
 import SidebarSkeleton from "./skeletons/SidebarSkeleton";
 import { Users } from "lucide-react";
+import { formatMessageTime } from "../lib/utils";
 
 const Sidebar = () => {
   const {
@@ -90,8 +91,15 @@ const Sidebar = () => {
             </div>
 
             {/* User info - only visible on larger screens */}
-            <div className="hidden lg:block text-left min-w-0">
-              <div className="font-medium truncate">{user.fullName}</div>
+            <div className="hidden lg:block text-left min-w-0 flex-1">
+              <div className="flex justify-between items-start">
+                <div className="font-medium truncate">{user.fullName}</div>
+                {user.lastMessage && (
+                  <div className="text-xs text-zinc-400">
+                    {formatMessageTime(user.lastMessage)}
+                  </div>
+                )}
+              </div>
               <div className="text-sm text-zinc-400">
                 {onlineUsers.includes(user._id) ? "Online" : "Offline"}
               </div>

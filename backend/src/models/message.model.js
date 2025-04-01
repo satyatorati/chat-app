@@ -18,6 +18,10 @@ const messageSchema = new mongoose.Schema(
     image: {
       type: String,
     },
+    lastMessage: {
+      type: Date,
+      default: Date.now,
+    },
   },
   { timestamps: true }
 );

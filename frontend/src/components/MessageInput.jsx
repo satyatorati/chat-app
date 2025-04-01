@@ -95,6 +95,7 @@ const MessageInput = () => {
             <Image size={20} />
           </button>
         </div>
+
         <button
           type="submit"
           className="btn btn-sm btn-circle"
@@ -106,4 +107,5 @@ const MessageInput = () => {
     </div>
   );
 };
+
 export default MessageInput;
